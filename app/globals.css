@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Parcelwalah public-website design tokens (from webadmin-parcelwalah/index.html) */
+@theme {
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-plus-jakarta),
+    ui-sans-serif, system-ui, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-brand: #ff6a1a;
+  --color-brand-2: #ff8a3d;
+  --color-brand-soft: #fff4ed;
+  --color-ink: #0e0e10;
+  --color-dark: #1d1d1d;
+  --color-muted: #6b6b73;
+  --color-line: rgba(20, 20, 30, 0.08);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-card: 22px;
+  --radius-input: 12px;
+
+  --shadow-md: 0 18px 40px -22px rgba(0, 0, 0, 0.22);
+  --shadow-lg:
+    0 30px 60px -20px rgba(255, 106, 26, 0.25),
+    0 20px 40px -25px rgba(0, 0, 0, 0.18);
+  --shadow-glow:
+    0 14px 30px -12px rgba(255, 106, 26, 0.6),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.18);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background:
+    radial-gradient(1200px 600px at 85% -10%, #ffe3d0 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, #fff4ed 0%, transparent 55%),
+    #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.65;
 }

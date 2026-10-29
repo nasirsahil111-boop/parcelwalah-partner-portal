@@ -18,7 +18,7 @@ export default function DemoWallet() {
       />
 
       <Card title="Wallet Recharge (Top-up Request)">
-        <p className="mb-3 text-sm text-gray-600">
+        <p className="mb-3 text-sm text-muted">
           v1 me: UPI se payment karke request bhejein — admin verify karke
           wallet credit karega. Demo me request sirf list me dikhegi, balance
           nahi badhega.
@@ -55,17 +55,17 @@ export default function DemoWallet() {
 
       <Card title="Transactions">
         {demo.txns.length === 0 ? (
-          <p className="text-sm text-gray-500">Koi transaction nahi hai.</p>
+          <p className="text-sm text-muted">Koi transaction nahi hai.</p>
         ) : (
           <ul className="space-y-2">
             {demo.txns.map((t) => (
               <li
                 key={t.id}
-                className="flex items-center justify-between rounded-xl border border-gray-100 bg-gray-50/60 px-3 py-2"
+                className="flex items-center justify-between rounded-2xl border border-line bg-brand-soft/50 px-3 py-2"
               >
                 <div>
-                  <p className="text-sm text-gray-800">{t.note}</p>
-                  <p className="text-xs text-gray-500">{t.at}</p>
+                  <p className="text-sm text-dark">{t.note}</p>
+                  <p className="text-xs text-muted">{t.at}</p>
                 </div>
                 <p
                   className={`text-sm font-bold ${t.type === "debit" ? "text-red-700" : "text-green-700"}`}

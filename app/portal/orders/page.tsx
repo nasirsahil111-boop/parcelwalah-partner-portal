@@ -19,7 +19,7 @@ export default function PortalOrders() {
       <div className="mb-4 flex flex-wrap gap-1">
         <button
           onClick={() => setFilter("all")}
-          className={`rounded-full px-3 py-1.5 text-sm font-medium ${filter === "all" ? "bg-orange-600 text-white" : "bg-gray-100 text-gray-700"}`}
+          className={`rounded-full px-3 py-1.5 text-sm font-medium ${filter === "all" ? "bg-gradient-to-br from-brand to-brand-2 text-white shadow-glow" : "bg-brand-soft text-dark"}`}
         >
           Sabhi
         </button>
@@ -27,7 +27,7 @@ export default function PortalOrders() {
           <button
             key={s}
             onClick={() => setFilter(s)}
-            className={`rounded-full px-3 py-1.5 text-sm font-medium ${filter === s ? "bg-orange-600 text-white" : "bg-gray-100 text-gray-700"}`}
+            className={`rounded-full px-3 py-1.5 text-sm font-medium ${filter === s ? "bg-gradient-to-br from-brand to-brand-2 text-white shadow-glow" : "bg-brand-soft text-dark"}`}
           >
             {STATUS_LABEL[s]}
           </button>

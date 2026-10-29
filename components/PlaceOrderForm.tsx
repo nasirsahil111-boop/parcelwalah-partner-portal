@@ -163,7 +163,7 @@ export function PlaceOrderForm({
                 placeholder="Poora address"
               />
             </Field>
-            <label className="flex items-center gap-2 text-sm text-gray-700">
+            <label className="flex items-center gap-2 text-sm text-dark">
               <input
                 type="checkbox"
                 checked={savePickup}
@@ -229,7 +229,7 @@ export function PlaceOrderForm({
             ) : null}
           </div>
         </Field>
-        {mapsNote ? <p className="text-xs text-gray-500">{mapsNote}</p> : null}
+        {mapsNote ? <p className="text-xs text-muted">{mapsNote}</p> : null}
 
         <Field label="COD amount (₹) — 0 matlab prepaid, customer se kuch nahi lena">
           <input
@@ -241,7 +241,7 @@ export function PlaceOrderForm({
           />
         </Field>
 
-        <div className="rounded-xl bg-orange-50 p-3 text-sm">
+        <div className="rounded-2xl border border-line bg-brand-soft p-4 text-sm">
           <p>
             <span className="font-medium">Delivery fee: </span>
             {quote.fee !== null ? (
@@ -249,7 +249,7 @@ export function PlaceOrderForm({
             ) : (
               "—"
             )}{" "}
-            <span className="text-gray-500">({quote.note})</span>
+            <span className="text-muted">({quote.note})</span>
           </p>
           <p className="mt-1">
             Wallet balance: ₹{walletBalance.toLocaleString("en-IN")}
@@ -268,7 +268,7 @@ export function PlaceOrderForm({
         <Btn type="submit" disabled={submitting || insufficient}>
           {submitting ? "Place ho raha hai…" : "Order Confirm karein"}
         </Btn>
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-muted">
           Confirm hote hi order Captain app ki queue me jayega (source:
           Portal).
         </p>

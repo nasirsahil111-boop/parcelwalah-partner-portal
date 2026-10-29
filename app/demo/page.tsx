@@ -16,10 +16,10 @@ export default function DemoDashboard() {
 
   return (
     <>
-      <h1 className="text-xl font-bold text-gray-900">
+      <h1 className="text-xl font-bold text-ink">
         Namaste, {demo.partnerName}
       </h1>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-muted">
         {demo.businessType} • {demo.city}
       </p>
 
@@ -38,19 +38,19 @@ export default function DemoDashboard() {
         <div className="flex flex-wrap gap-2">
           <Link
             href="/demo/place-order"
-            className="rounded-xl bg-orange-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-orange-700"
+            className="rounded-full bg-gradient-to-br from-brand to-brand-2 px-4 py-2.5 text-sm font-semibold text-white hover:shadow-glow"
           >
             + Place Order
           </Link>
           <Link
             href="/demo/wallet"
-            className="rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-50"
+            className="rounded-full border border-line bg-white px-4 py-2.5 text-sm font-semibold text-dark hover:bg-brand-soft/50"
           >
             Wallet Recharge
           </Link>
           <Link
             href="/demo/orders"
-            className="rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-50"
+            className="rounded-full border border-line bg-white px-4 py-2.5 text-sm font-semibold text-dark hover:bg-brand-soft/50"
           >
             Order History
           </Link>

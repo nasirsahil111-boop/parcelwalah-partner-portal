@@ -34,13 +34,18 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-orange-50/60 px-4 py-8">
+    <div className="flex min-h-screen items-center justify-center px-4 py-8">
       <div className="w-full max-w-md space-y-4">
         <div className="text-center">
-          <h1 className="text-2xl font-extrabold text-orange-600">
-            Parcelwalah
+          <img
+            src="/logo-parcelwalah.png"
+            alt="Parcelwalah"
+            className="mx-auto h-16 w-16 rounded-2xl shadow-glow"
+          />
+          <h1 className="mt-3 text-2xl font-bold text-ink">
+            Parcel<span className="text-brand">walah</span>
           </h1>
-          <p className="text-sm text-gray-500">Partner Portal — partners only</p>
+          <p className="text-sm text-muted">Partner Portal — partners only</p>
         </div>
 
         <Card title="Partner Login">
@@ -69,7 +74,7 @@ export default function LoginPage() {
             <Btn type="submit" disabled={busy}>
               {busy ? "Login ho raha hai…" : "Login"}
             </Btn>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-muted">
               Login sirf admin-created partner accounts se hota hai — public
               signup nahi hai. Account nahi hai to admin se sampark karein.
             </p>
@@ -86,14 +91,14 @@ export default function LoginPage() {
           </p>
           <button
             onClick={() => router.push("/demo")}
-            className="mt-3 rounded-xl bg-amber-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-amber-600"
+            className="mt-3 rounded-full bg-amber-500 px-5 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-amber-600"
           >
             Demo dekho (fake data)
           </button>
         </div>
 
         {!isFirebaseConfigured() ? (
-          <p className="text-center text-xs text-gray-500">
+          <p className="text-center text-xs text-muted">
             Live login ke liye Firebase env keys chahiye — README dekhein.
           </p>
         ) : null}

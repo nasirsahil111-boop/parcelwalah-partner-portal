@@ -18,16 +18,16 @@ function PortalShell({ children }: { children: ReactNode }) {
   if (!portal.configured) {
     return (
       <div className="mx-auto max-w-xl px-4 py-16 text-center">
-        <h1 className="text-xl font-bold text-gray-900">
+        <h1 className="text-xl font-bold text-ink">
           Firebase configure nahi hai
         </h1>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-muted">
           Live portal ke liye .env.local me Firebase keys daalein (README
           dekhein). Tab tak Demo dekho se portal test karein.
         </p>
         <button
           onClick={() => router.push("/demo")}
-          className="mt-4 rounded-xl bg-amber-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-amber-600"
+          className="mt-4 rounded-full bg-amber-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-amber-600"
         >
           Demo dekho (fake data)
         </button>
@@ -36,7 +36,7 @@ function PortalShell({ children }: { children: ReactNode }) {
   }
 
   if (portal.loading) {
-    return <p className="px-4 py-16 text-center text-sm text-gray-500">Load ho raha hai…</p>;
+    return <p className="px-4 py-16 text-center text-sm text-muted">Load ho raha hai…</p>;
   }
 
   if (!portal.user) return null;

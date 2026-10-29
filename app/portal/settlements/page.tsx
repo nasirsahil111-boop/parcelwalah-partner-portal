@@ -9,13 +9,13 @@ export default function PortalSettlements() {
   return (
     <>
       <Card title="COD Ledger — kaise kaam karta hai">
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-dark">
           Captain customer se COD collect karta hai, apni earning rakh kar
           baaki Parcelwalah ko deta hai. Example: COD ₹200 collect → captain
           earning ₹20 → wallet me <span className="font-bold">−₹180</span>.
           Deposit <b>online-only</b> hai — koi cash collection nahi.
         </p>
-        <p className="mt-2 text-sm text-gray-700">
+        <p className="mt-2 text-sm text-dark">
           Partner settlement T+1 hota hai — order-wise breakup + UTR ke saath
           partner ko manual transfer.
         </p>
@@ -23,21 +23,21 @@ export default function PortalSettlements() {
 
       <Card title="COD Settlements">
         {portal.settlements.length === 0 ? (
-          <p className="text-sm text-gray-500">Koi settlement nahi hai.</p>
+          <p className="text-sm text-muted">Koi settlement nahi hai.</p>
         ) : (
           <ul className="space-y-3">
             {portal.settlements.map((s) => (
               <li
                 key={s.id}
-                className="rounded-xl border border-gray-100 bg-gray-50/60 p-3"
+                className="rounded-2xl border border-line bg-brand-soft/50 p-3"
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-mono text-sm font-bold text-gray-900">
+                  <span className="font-mono text-sm font-bold text-ink">
                     Order {s.orderId}
                   </span>
                   <Badge>{COD_STAGE_LABEL[s.stage]}</Badge>
                 </div>
-                <p className="mt-2 text-sm text-gray-800">
+                <p className="mt-2 text-sm text-dark">
                   COD collected: ₹{s.codCollected} • Captain earning: ₹
                   {s.captainEarning} •{" "}
                   <span className="font-semibold text-red-700">
@@ -45,9 +45,9 @@ export default function PortalSettlements() {
                   </span>
                 </p>
                 {s.utr ? (
-                  <p className="text-xs text-gray-500">UTR: {s.utr}</p>
+                  <p className="text-xs text-muted">UTR: {s.utr}</p>
                 ) : null}
-                <p className="text-xs text-gray-500">{s.at}</p>
+                <p className="text-xs text-muted">{s.at}</p>
               </li>
             ))}
           </ul>

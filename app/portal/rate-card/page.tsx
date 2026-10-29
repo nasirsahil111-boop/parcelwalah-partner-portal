@@ -10,7 +10,7 @@ export default function PortalRateCard() {
   return (
     <>
       {myCity ? (
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-muted">
           Aapki city: <span className="font-semibold">{myCity}</span>
         </p>
       ) : null}
@@ -21,19 +21,19 @@ export default function PortalRateCard() {
         >
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-left text-gray-500">
+              <tr className="text-left text-muted">
                 <th className="py-1">Distance</th>
                 <th className="py-1">Fee</th>
               </tr>
             </thead>
             <tbody>
               {card.standard.map((s) => (
-                <tr key={s.upToKm} className="border-t border-gray-100">
+                <tr key={s.upToKm} className="border-t border-line">
                   <td className="py-1.5">{s.upToKm} km tak</td>
                   <td className="py-1.5 font-semibold">₹{s.fee}</td>
                 </tr>
               ))}
-              <tr className="border-t border-gray-100">
+              <tr className="border-t border-line">
                 <td className="py-1.5">
                   Food / shopping (flat, {card.foodFlatUpToKm} km tak)
                 </td>

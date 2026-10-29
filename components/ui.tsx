@@ -8,9 +8,9 @@ export function Card({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-orange-100 bg-white p-4 shadow-sm">
+    <section className="rounded-card border border-line bg-white p-5 shadow-md">
       {title ? (
-        <h2 className="mb-3 text-base font-semibold text-gray-900">{title}</h2>
+        <h2 className="mb-3 text-lg font-semibold text-ink">{title}</h2>
       ) : null}
       {children}
     </section>
@@ -27,19 +27,21 @@ export function Stat({
   sub?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-orange-100 bg-white p-4 shadow-sm">
-      <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+    <div className="rounded-card border border-line bg-white p-4 shadow-md">
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted">
         {label}
       </p>
-      <p className="mt-1 text-2xl font-bold text-gray-900">{value}</p>
-      {sub ? <p className="mt-1 text-xs text-gray-500">{sub}</p> : null}
+      <p className="mt-1 text-[26px] font-bold leading-tight text-ink">
+        {value}
+      </p>
+      {sub ? <p className="mt-1 text-xs text-muted">{sub}</p> : null}
     </div>
   );
 }
 
 export function Badge({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-block rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-semibold text-orange-800">
+    <span className="inline-block rounded-full bg-brand-soft px-2.5 py-0.5 text-xs font-semibold text-brand">
       {children}
     </span>
   );
@@ -60,16 +62,16 @@ export function Btn({
 }) {
   const cls =
     variant === "primary"
-      ? "bg-orange-600 text-white hover:bg-orange-700"
+      ? "bg-gradient-to-br from-brand to-brand-2 text-white shadow-glow hover:-translate-y-0.5 hover:shadow-lg"
       : variant === "danger"
-        ? "bg-red-600 text-white hover:bg-red-700"
-        : "bg-white text-gray-800 border border-gray-300 hover:bg-gray-50";
+        ? "bg-red-600 text-white shadow-md hover:-translate-y-0.5 hover:bg-red-700"
+        : "border border-line bg-white text-dark hover:-translate-y-0.5 hover:shadow-md";
   return (
     <button
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`rounded-xl px-4 py-2.5 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-50 ${cls}`}
+      className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 ${cls}`}
     >
       {children}
     </button>
@@ -85,7 +87,7 @@ export function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-sm font-medium text-gray-700">
+      <span className="mb-1.5 block text-[13.5px] font-semibold text-dark">
         {label}
       </span>
       {children}
@@ -94,4 +96,4 @@ export function Field({
 }
 
 export const inputCls =
-  "w-full rounded-xl border border-gray-300 px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100";
+  "w-full rounded-input border border-line bg-white px-3.5 py-3 text-[15px] text-ink outline-none transition placeholder:text-muted/60 focus:border-brand focus:ring-4 focus:ring-brand/15";

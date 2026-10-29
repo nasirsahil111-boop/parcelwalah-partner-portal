@@ -73,23 +73,23 @@ export default function PortalLocations() {
 
       <Card title="Saved Pickup Locations">
         {portal.locations.length === 0 ? (
-          <p className="text-sm text-gray-500">Koi saved location nahi hai.</p>
+          <p className="text-sm text-muted">Koi saved location nahi hai.</p>
         ) : (
           <ul className="space-y-2">
             {portal.locations.map((l) => (
               <li
                 key={l.id}
-                className="rounded-xl border border-gray-100 bg-gray-50/60 px-3 py-2"
+                className="rounded-2xl border border-line bg-brand-soft/50 px-3 py-2"
               >
-                <p className="text-sm font-semibold text-gray-900">{l.name}</p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm font-semibold text-ink">{l.name}</p>
+                <p className="text-sm text-muted">
                   {l.address} • {l.city}
                 </p>
               </li>
             ))}
           </ul>
         )}
-        <p className="mt-3 text-xs text-gray-500">
+        <p className="mt-3 text-xs text-muted">
           Location delete karna ho to admin se sampark karein (v1 me delete
           sirf demo me hai).
         </p>

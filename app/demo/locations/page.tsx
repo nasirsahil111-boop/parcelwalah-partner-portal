@@ -55,17 +55,17 @@ export default function DemoLocations() {
 
       <Card title="Saved Pickup Locations">
         {demo.locations.length === 0 ? (
-          <p className="text-sm text-gray-500">Koi saved location nahi hai.</p>
+          <p className="text-sm text-muted">Koi saved location nahi hai.</p>
         ) : (
           <ul className="space-y-2">
             {demo.locations.map((l) => (
               <li
                 key={l.id}
-                className="flex items-center justify-between rounded-xl border border-gray-100 bg-gray-50/60 px-3 py-2"
+                className="flex items-center justify-between rounded-2xl border border-line bg-brand-soft/50 px-3 py-2"
               >
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">{l.name}</p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm font-semibold text-ink">{l.name}</p>
+                  <p className="text-sm text-muted">
                     {l.address} • {l.city}
                   </p>
                 </div>

@@ -8,7 +8,7 @@ export default function DemoRateCard() {
   const demo = useDemo();
   return (
     <>
-      <p className="text-sm text-gray-600">
+      <p className="text-sm text-muted">
         Aapki city: <span className="font-semibold">{demo.city}</span> — neeche
         uska card highlight hai. Baaki cities ke cards bhi dekh sakte hain.
       </p>
@@ -19,19 +19,19 @@ export default function DemoRateCard() {
         >
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-left text-gray-500">
+              <tr className="text-left text-muted">
                 <th className="py-1">Distance</th>
                 <th className="py-1">Fee</th>
               </tr>
             </thead>
             <tbody>
               {card.standard.map((s) => (
-                <tr key={s.upToKm} className="border-t border-gray-100">
+                <tr key={s.upToKm} className="border-t border-line">
                   <td className="py-1.5">{s.upToKm} km tak</td>
                   <td className="py-1.5 font-semibold">₹{s.fee}</td>
                 </tr>
               ))}
-              <tr className="border-t border-gray-100">
+              <tr className="border-t border-line">
                 <td className="py-1.5">
                   Food / shopping (flat, {card.foodFlatUpToKm} km tak)
                 </td>
@@ -39,7 +39,7 @@ export default function DemoRateCard() {
               </tr>
             </tbody>
           </table>
-          <p className="mt-2 text-xs text-gray-500">
+          <p className="mt-2 text-xs text-muted">
             10 km se zyada distance par is card me rate nahi hai — admin se
             confirm hoga.
           </p>
